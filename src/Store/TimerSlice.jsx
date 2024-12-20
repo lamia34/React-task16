@@ -11,26 +11,24 @@ const timerSlice = createSlice({
   name: 'timer',
   initialState,
   reducers: {
-    incrementSeconds: (state, action) => {
-      state.seconds += action.payload;
-      if (state.seconds >= 60) {
-        state.seconds -= 60;
-        state.minutes += 1;
-      }
-      if (state.minutes >= 60) {
-        state.minutes -= 60;
-        state.hours += 1;
-      }
-    },
-    incrementMinutes: (state, action) => {
-      state.minutes += action.payload;
-      if (state.minutes >= 60) {
-        state.minutes -= 60;
-        state.hours += 1;
+    decrementSeconds: (state) => {
+      if (state.seconds > 0) {
+        state.seconds -= 1;
+      } else if (state.minutes > 0 || state.hours > 0) {
+        state.seconds = 59;
+        if (state.minutes > 0) {
+          state.minutes -= 1;
+        } else if (state.hours > 0) {
+          state.minutes = 59;
+          state.hours -= 1;
+        }
       }
     },
-    incrementHours: (state, action) => {
-      state.hours += action.payload;
+    setTimer: (state, action) => {
+      const { hours, minutes, seconds } = action.payload;
+      state.hours = hours;
+      state.minutes = minutes;
+      state.seconds = seconds;
     },
     toggleTimer: (state) => {
       state.isRunning = !state.isRunning;
@@ -45,9 +43,8 @@ const timerSlice = createSlice({
 });
 
 export const {
-  incrementSeconds,
-  incrementMinutes,
-  incrementHours,
+  decrementSeconds,
+  setTimer,
   toggleTimer,
   resetTimer,
 } = timerSlice.actions;
