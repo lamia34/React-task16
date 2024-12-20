@@ -1,0 +1,84 @@
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .time-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .time-unit {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+  }
+  
+  .time-unit span {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .time-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .time-buttons button {
+    margin: 5px 0;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .time-buttons button:hover {
+    background-color: #45a049;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .button-container button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    margin: 5px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-container button:hover {
+    background-color: #007B9A;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 5px 0;
+  }
+  
